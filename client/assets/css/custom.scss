@@ -1,0 +1,1038 @@
+@font-face {
+	font-family: 'hr';
+	src: url('../fonts/Helvetica.ttf');
+	
+
+}
+
+@font-face {
+	font-family: 'hrb';
+	src: url('../fonts/HelveticaBold.ttf');
+	
+}
+$break-mobile: 767px;
+$maincolor: #5b091f;
+$subcolor: #a07f38;
+$darkgreen: #008a60;
+$lightgreen: #12b57c;
+$black: #000000;
+$white: #FFFFFF;
+$blue:#55bdd8;
+$green: #a5cd39;
+$gray: #808080;
+$red: #c70b25;
+
+/*margin*/
+
+@mixin margin-tb($margintopbottom) {
+  margin-top: $margintopbottom;
+  margin-bottom: $margintopbottom;
+}
+
+@mixin margin-lr($marginleftright) {
+  margin-left: $marginleftright;
+  margin-right: $marginleftright;
+}
+
+@mixin margin-t($margintop)
+{
+	margin-top: $margintop;
+}
+
+@mixin margin-b($marginbottom)
+{
+	margin-bottom: $marginbottom;
+}
+@mixin margin-l($marginleft)
+{
+	margin-left: $marginleft;
+}
+
+@mixin margin-r($marginright)
+{
+	margin-right: $marginright;
+}
+
+@mixin margin-four($margint, $marginr, $marginb, $marginl)
+{
+	margin: $margint $marginr $marginb $marginl;
+}
+@mixin margin-three($margint1, $marginlr1,$marginb1)
+{
+	margin: $margint1 $marginlr1 $marginb1;
+}
+@mixin margin-two($margintp, $marginlr)
+{
+	margin: $margintp $marginlr;
+}
+@mixin margin-one($margintblr)
+{
+	margin: $margintblr;
+}
+
+/*padding*/
+
+@mixin padding-tb($paddingtopbottom) {
+  padding-top: $paddingtopbottom;
+  padding-bottom: $paddingtopbottom;
+}
+
+@mixin padding-lr($paddingleftright) {
+  padding-left: $paddingleftright;
+  padding-right: $paddingleftright;
+}
+
+@mixin padding-t($paddingtop)
+{
+	padding-top: $paddingtop;
+}
+
+@mixin padding-b($paddingbottom)
+{
+	padding-bottom: $paddingbottom;
+}
+@mixin padding-l($paddingleft)
+{
+	padding-left: $paddingleft;
+}
+
+@mixin padding-r($paddingright)
+{
+	padding-right: $paddingright;
+}
+
+@mixin padding-four($paddingt, $paddingr, $paddingb, $paddingl)
+{
+	padding: $paddingt $paddingr $paddingb $paddingl;
+}
+@mixin padding-three($paddingt1, $paddinglr1,$paddingb1)
+{
+	padding: $paddingt1 $paddinglr1 $paddingb1;
+}
+@mixin padding-two($paddingtp, $paddinglr)
+{
+	padding: $paddingtp $paddinglr;
+}
+@mixin padding-one($paddingtblr)
+{
+	padding: $paddingtblr;
+}
+
+/*font*/
+@mixin fontsize($fontsize)
+{
+	font-size: $fontsize;
+}
+
+@mixin fontfamily($fontfamily)
+{
+	font-family: $fontfamily;
+}
+
+
+*:focus
+{
+	-webkit-box-shadow:none !important;
+	box-shadow:none !important;
+}
+a
+{
+	text-decoration: none;
+	&:hover
+	{
+		text-decoration: none;
+	}
+	
+}
+.disinline
+{
+	display: inline;
+}
+.error
+{
+	color: $red;
+}
+#wrapper
+{
+	max-width:1600px;
+	margin: 0 auto;
+	position: relative;
+
+
+	header
+	{
+			&.gms
+			{
+				border: 2px solid $blue;
+				
+				@include padding-t(10px);
+			}
+			.logo
+			{
+				
+			}
+
+		
+			.top-nav
+			{
+				.navbar-toggle
+			 	{
+			 		position: absolute;
+			 		top: -50px;
+			 		right: 0px;
+			 		.icon-bar
+			 		{
+			 			background: $green;
+			 		}
+			 		
+			 	}
+			 .navbar-collapse
+			 {
+			 	@include padding-r(0px);
+
+
+			 }
+				.navbar-nav
+				{
+					@media screen and (max-width: $break-mobile)
+					{
+
+    						@include margin-two(7px, 15px);
+					}
+					li
+					{
+						a
+						{
+							color: $blue;
+							text-transform: capitalize;
+							@include fontsize(20px);
+							&:hover
+							{
+								background: transparent;
+							}
+							&.cart-class
+							{
+								@include padding-tb(10px);
+								img
+								{
+									width: 25px;
+								}
+							}
+						}
+
+						.navbar-form
+						{
+							 @media screen and (max-width: $break-mobile) {
+							 	@include margin-lr(0px);
+							 }
+						}
+
+					}
+				}
+
+				.search
+				{
+					.btn-default
+					{
+						border: 0px;
+						border-top-left-radius: 0;
+    					border-bottom-left-radius: 0;
+    					background: transparent;
+    					color: $blue;
+					}
+					.input-group-btn
+					{
+						vertical-align: bottom;
+						@media screen and (max-width: $break-mobile)
+						{
+
+	    						width: 4%;
+						}
+					}
+					img
+					{
+						width:75%
+					}
+					input
+					{
+						border-top-right-radius: 0;
+    					border-bottom-right-radius: 0;
+    					border: 0px;
+    					border-bottom: 2px solid $blue;
+    					background: transparent;
+    					color: $blue;
+    					webkit-box-shadow: none;
+    					box-shadow: none;
+    					height:27px;
+    					@include margin-l(6px);
+    					@include padding-l(0px);
+    					@include padding-b(0px);
+
+					}
+					::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+					  color: $blue;
+					}
+					::-moz-placeholder { /* Firefox 19+ */
+					  color: $blue;
+					}
+					:-ms-input-placeholder { /* IE 10+ */
+					  color: $blue;
+					}
+					:-moz-placeholder { /* Firefox 18- */
+					  color: $blue;
+					}
+					
+				}
+			}
+			
+			
+		
+	}/*header */
+	.top
+	{
+		.whitebox {
+		    background-color: $white;
+		    width: 100%;
+		    height: 35px;
+		    position: relative;
+		    &:after 
+		    {
+		    content: " ";
+		    position: absolute;
+		    bottom: -20px;
+		    left: 50%;
+		    margin-left: -20px;
+		    border-style: solid;
+		    border-width: 20px 30px 0 30px;
+		    border-color: $white transparent transparent transparent;
+			}
+		}
+		
+		.productbox {
+		    background-color: #85D782;
+		   	h3{
+		   		color:$white;
+		   		@include padding-t(20px);
+		   		text-transform: uppercase;
+		   	}
+
+		   	.medicine
+		   	{
+				@include margin-tb(15px);
+		   		.medicine-name
+		   		{
+		   			@include margin-tb(5px);
+		   				h4
+				   		{
+				   			color:$white;
+				   			text-transform: uppercase;
+				   		}
+		   		}
+		   		
+		   	}
+		}
+
+		.greenbox 
+		{
+		    background-color: $green;
+		    width: 100%;
+		    height: 35px;
+		    position: relative;
+		    &:after 
+		    {
+		    content: " ";
+		    position: absolute;
+		    bottom: -20px;
+		    left: 50%;
+		    margin-left: -20px;
+		    border-style: solid;
+		    border-width: 20px 30px 0 30px;
+		    border-color: $green transparent transparent transparent;
+			}
+		}
+
+		.single
+		{
+		
+			background: white;
+			h3
+			{
+				text-align: center;
+				color: $green;
+				@include fontsize(26px);
+				text-transform: uppercase;
+				@include padding-tb(20px);
+			}
+			p
+			{
+				@include margin-b(0px);
+				.brand-img
+				{
+					@include padding-one(5px);
+				}
+			}
+			
+		}
+
+		.bluebox 
+		{
+		    background-color: $blue;
+		    width: 100%;
+		    height: 35px;
+		    position: relative;
+		    &:after 
+		    {
+		    content: " ";
+		    position: absolute;
+		    bottom: -20px;
+		    left: 50%;
+		    margin-left: -20px;
+		    border-style: solid;
+		    border-width: 20px 30px 0 30px;
+		    border-color: $blue transparent transparent transparent;
+			}
+		}
+		.qabox
+		{
+			background: $white url(../images/bg.jpg) no-repeat;
+			background-position: right bottom;
+   			 background-size: 100%;
+   			 @include padding-b(200px);
+
+			h3
+			{
+				text-align: center;
+				color: $green;
+				@include fontsize(26px);
+				text-transform: uppercase;
+				@include padding-tb(20px);
+			}
+			.qstans
+			{
+					@include margin-tb(15px);
+					p
+					{	
+						@include fontsize(18px);
+						&.qst
+						{
+							color: $gray;
+						}
+						&.ans
+						{
+							color: $green;
+							text-alig: justify;
+							@include padding-l(25px);
+						}
+					}
+				
+			}
+			
+		}
+	}
+
+	.bluebottombox
+	{
+		background: $blue;
+		h3
+		{
+			color: $white;
+			@include fontsize(26px);
+			text-transform: uppercase;
+			@include padding-tb(20px);
+			text-align: center;
+		}
+		.contact-dtl
+		{
+			@include margin-tb(20px);
+			p
+			{
+				text-transform: uppercase;
+				color: $white;
+				@include fontsize(17px);
+				span
+				{
+					text-transform: lowercase;
+				}
+			}
+		}
+		.contact-form
+		{
+			@include margin-tb(20px);
+			input
+			{
+			  border-radius:0px;
+			  border: none;
+			}
+			textarea
+			{
+			  border-radius:0px;
+			  border: none;
+			  resize: none;
+			}
+			::-webkit-input-placeholder 
+			{ /* Chrome/Opera/Safari */
+				color: $blue;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+			::-moz-placeholder 
+			{ /* Firefox 19+ */
+			  color: $blue;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+			:-ms-input-placeholder 
+			{ /* IE 10+ */
+			  color: $blue;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+			:-moz-placeholder 
+			{ /* Firefox 18- */
+			  color: $blue;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+			.btn-sign
+			{
+				border-radius: 0px;
+				@include padding-tb(3px);
+				color: $white;
+				background: $green;
+				text-transform: uppercase;
+				width: 100%;
+				border: 1px solid $green;
+				@include fontsize(18px)
+			}
+			
+
+		}
+		.map-row
+		{
+			@include margin-b(25px);
+			h3
+			{
+				@include fontsize(15px);
+				color:$white;
+				text-transform: capitalize;
+				@include padding-tb(0px);
+				@include margin-t(5px);
+			}
+		}
+		
+	}
+
+	.products
+	{
+		.bluebottombox
+		{
+			background: $blue;
+			.container
+			{
+				@include padding-tb(15px);
+				background: $white;
+				.medicine-head
+				{
+					@include margin-tb(25px);
+					
+					h3
+					{
+						color: $green;
+						@include padding-one(0px);
+						@include margin-t(5px);
+						@include fontsize(18px);
+					}
+				}
+				.product-imgs
+				{
+					position:relative;
+					.medicine-img
+					{
+						@include padding-one(10px);
+						@include margin-tb(15px);
+
+						    position:relative;
+						    display:inline-block;
+						
+						
+						.overlay 
+						{
+						    display:block;
+						    width:100%;
+						    height:100%;
+						    background:rgba(85,189,216,.5);
+						  
+						    position:absolute;
+						    top:0;
+						    left:0;
+						    display:inline-block;
+						    -webkit-box-sizing:border-box;
+						    -moz-box-sizing:border-box;
+						    box-sizing:border-box;
+						    text-align:center;
+						    color:white;
+						    padding:12px;
+						    font-size:20px;
+						    .div-con
+						    {
+						    	position:relative;
+						    	height: 100%;
+						    	.div-sub
+						    	{
+						    		position:absolute;
+						    		bottom:0px;
+						    		.tab-name
+						    		{
+						    			color: $white;
+						    			text-transform:uppercase;
+						    			text-align:left;
+						    			@include fontsize(24px);
+						    			@include margin-tb(2px);
+						    		}
+						    		.tab-cost
+						    		{
+						    			color: $white;
+						    			text-transform:uppercase;
+						    			text-align:left;
+						    			@include fontsize(17px);
+						    			@include margin-tb(2px);
+						    		}
+						    	}
+						    }
+
+						}
+						&:hover .overlay 
+					    {
+						    display:none;
+						}
+						img 
+						{
+						    vertical-align:top;
+						}
+						
+					}
+					.prevs
+					{
+						position:absolute;
+						top: 45%;
+						left: 10%;
+					}
+					.nexts
+					{
+						position:absolute;
+						top: 45%;
+						right: 10%;
+					}
+				}
+
+			}
+		}
+	}
+
+	.login
+	{
+		.bluebottombox
+		{
+			background: $blue;
+			.container
+			{
+				@include padding-tb(15px);
+				background: $white;
+				.login-head
+				{
+					@include margin-tb(50px);
+					
+					h3
+					{
+						color: $green;
+						@include padding-one(0px);
+						@include margin-t(10px);
+						@include fontsize(26px);
+					}
+					&.shopping
+					{
+						@include margin-b(15px);
+						
+						
+					}
+				}
+
+				.my-accout-head
+				{
+					p
+					{
+						color: $gray;
+						@include fontsize(18px);
+						@include padding-b(0px);
+						@include margin-b(2px);
+						
+					}
+				}
+				.msg-head
+				{
+
+					h3
+					{
+						color: $gray;
+						@include fontsize(20px);
+						@include padding-t(15px);
+						@include margin-t(0px);
+					}
+					&.log-info
+					{
+						h3{
+							@include padding-t(25px);
+							@include margin-b(0px);
+						}
+					}
+					p
+					{
+						color: $gray;
+						@include fontsize(18px);
+						@include padding-b(20px);
+					}
+
+				}
+				
+				.login-form
+				{
+					p.shop-info
+						{
+							color: $gray;
+							@include fontsize(17px);
+							@include margin-b(30px);
+							@include padding-l(25px);
+							img
+							{
+								width: 20px;
+								@include margin-r(10px);
+							}
+						}
+					.account-info
+					{
+						h3
+						{
+							color: $gray;
+							@include padding-tb(20px);
+							@include fontsize(20px);
+						}
+						
+					}
+
+					.accounts
+					{
+						p
+						{
+								@include fontsize(15px);
+								color: $gray;
+								font-weight:bold;
+								span
+								{
+									@include margin-lr(5px);
+									&.edit
+									{
+										float:right;
+										a{
+											color:$green;
+											&:hover
+											{
+												color: $green;
+											}
+										}
+									}
+								}
+						}
+
+						.password-div
+						{
+							@include margin-tb(30px);
+						}
+						
+					}
+					label
+					{
+						text-align:center;
+						color: $gray;
+						@include fontsize(16px);
+						@include margin-b(5px);
+						.fg
+						{
+							color: $blue;
+							@include padding-t(0);
+						}
+					}
+
+					input,textarea,select
+					{
+						border-radius: 0px;
+						border: 1px solid $gray;
+						&.p-qty
+						{
+							width:40%;
+							background: $green;
+							border: 1px solid $green;
+						}
+					}
+					textarea
+					{
+					  border-radius:0px;
+					  
+					  resize: none;
+					}
+					.btn-sign
+					{
+						background: $green;
+						color: $white;
+						border-radius: 0px;
+						border: 1px solid $green;
+						@include padding-two(6px, 20px);
+						text-transform: uppercase;
+						@include fontsize(18px);
+
+					}
+					.btn-create
+					{
+						background: $blue;
+						color: $white;
+						border-radius: 0px;
+						border: 1px solid $blue;
+						@include padding-two(6px, 20px);
+						text-transform: uppercase;
+						@include fontsize(18px);
+					}
+
+					.btnmar
+					{
+						@include margin-t(25px);
+						@include margin-b(50px);
+					}
+					.btnmarcre
+					{
+							@include margin-t(15px);
+						  @include margin-b(25px);
+					}
+
+					table
+					{
+						text-align: left!important;
+						thead
+						{
+							tr
+							{
+								th
+								{
+									text-transform : uppercase;
+									color: $gray;
+									@include fontsize(16px);
+									border-bottom: 0px solid transparent;
+								}
+							}
+						}
+						tbody
+						{
+							tr
+							{
+								&:not(:last-child)
+								{
+									border-bottom: 1px solid $blue;
+								}
+								
+							   &.pr-list
+							   {
+							   		@include margin-tb(5px);
+							   }
+								td
+								{
+									border-top: 0px solid transparent;
+									@include padding-tb(10px);
+								}
+
+							}
+						}
+						tfoot
+						{
+							tr
+							{
+								td
+								{
+									border-top: 0px solid transparent;
+								}
+							}
+						}
+						.p-img
+						{
+							width:100%;
+						}
+
+						.t-name
+						{
+							text-align: left;
+							color: $gray;
+							@include fontsize(14px);
+							text-transform: uppercase;
+    						font-weight: bold;
+						}
+						.wishlist-p
+						{
+							text-align: left;
+							a
+							{
+								color: $green;
+							}
+						}
+
+					}
+
+					.total-div
+					{
+						@include margin-t(50px);
+						@include margin-b(20px);
+						text-align:left;
+						.totals
+						{
+							@include padding-four(15px,15px,15px,20%);
+							border: 1px solid $gray;
+							
+							p
+							{
+								color: $gray;
+								@include fontsize(14px);
+								text-align:center;
+							}
+						}
+						p
+						{
+							color:$green;
+							@include margin-t(5px);
+						}
+					}
+
+
+				}
+				.wishlistarea
+				{
+					@include margin-b(50px);
+					.mywishlist
+					{
+						h4
+						{
+							color: $gray;
+						}
+						p
+						{
+							color: $green;
+							a
+							{
+								color: $gray;
+								&:hover
+								{
+									color:$gray;
+								}
+							}
+						}
+					}
+				}
+				
+			}
+		}
+	}
+
+
+	.footer
+	{
+		color: $green;
+		@include fontsize(14px);
+		@include margin-tb(10px);
+		p
+		{
+			@include margin-b(0px);
+			a
+			{
+				color: $green;
+				&:hover
+				{
+					color: $green;
+				}
+			}
+		}
+		.social
+		{
+			@include margin-b(0px);
+			li
+			{
+				a
+				{
+					img
+					{
+						width: 30px;
+					}
+				}
+			}
+		}
+	}
+
+	.footer1
+	{
+		color: $white;
+		background: $green;
+		@include fontsize(14px);
+		@include padding-tb(10px);
+		p
+		{
+			@include margin-b(0px);
+			a
+			{
+				color: $white;
+				&:hover
+				{
+					color: $white;
+				}
+			}
+		}
+		.social
+		{
+			@include margin-b(0px);
+			li
+			{
+				a
+				{
+					img
+					{
+						width: 30px;
+					}
+				}
+			}
+		}
+	}
+
+
+	.success-message
+			{
+				@include padding-tb(10px);
+
+				.successmsg
+				{
+					@include padding-one(10px);
+					color: $white;
+					background: $green;
+				}
+				.failmsg
+				{
+					@include padding-one(10px);
+					color: $white;
+					background: $red;
+				}
+
+
+				
+			}
+	
+}/*wrapper*/
+
+@media (min-width: 992px)
+{
+	.col-md-2-off {
+	    width: 20.666667%;
+	    @include padding-lr(0px);
+	}
+}
